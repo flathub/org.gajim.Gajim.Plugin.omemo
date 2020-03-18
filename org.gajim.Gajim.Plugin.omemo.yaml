@@ -1,7 +1,7 @@
 id: org.gajim.Gajim.Plugin.omemo
 runtime: org.gajim.Gajim
 runtime-version: stable
-sdk: org.gnome.Sdk//3.34
+sdk: org.gnome.Sdk//3.36
 build-extension: true
 separate-locales: false
 appstream-compose: false
@@ -17,11 +17,11 @@ modules:
     buildsystem: simple
     build-commands:
       - install -d ${FLATPAK_DEST}/lib/python3.7/site-packages/
-      - pip3 install --prefix=${FLATPAK_DEST} protobuf-3.7.1-py2.py3-none-any.whl
+      - pip3 install --prefix=${FLATPAK_DEST} protobuf-3.11.3-py2.py3-none-any.whl
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/f5/e4/7c86c9c9b4bad7632e107064fb07d0812b9858a49830d0b2477081bf1267/protobuf-3.7.1-py2.py3-none-any.whl
-        sha256: ec3c49b6d247152e19110c3a53d9bb4cf917747882017f70796460728b02722e
+        url: https://files.pythonhosted.org/packages/27/9c/ef816295b4b40298fd0a17bf8f0ba6cf3e0c44cb2ce72257168e09996b8b/protobuf-3.11.3-py2.py3-none-any.whl
+        sha256: 24e3b6ad259544d717902777b33966a1a069208c885576254c112663e6a5bb0f
 
   - name: python3-axolotl-curve25519
     buildsystem: simple
@@ -37,11 +37,11 @@ modules:
     buildsystem: simple
     build-commands:
       - install -d ${FLATPAK_DEST}/lib/python3.7/site-packages/
-      - pip3 install --prefix=${FLATPAK_DEST} .
+      - pip3 install --prefix=${FLATPAK_DEST} python_axolotl-0.2.3-py3-none-any.whl
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/27/99/3b905f0061aba53526408d286e53cee3b00c9fd256eed7d21d5d41033690/python-axolotl-0.1.42.tar.gz
-        sha256: ef78c2efabcd4c33741669334bdda04710a3ef0e00b653f00127acff6460a7f0
+      - type: file
+        url: https://files.pythonhosted.org/packages/0f/b3/4a0b0e664435691bba36fac6e366cece506d002294c293bd3dcb40c2b2ba/python_axolotl-0.2.3-py3-none-any.whl
+        sha256: 6a22acbf646c3b736ea1a4663ab5c52687fce6612e92ae6a7fe63803c212fb9e
 
   - name: python3-qrcode
     buildsystem: simple
