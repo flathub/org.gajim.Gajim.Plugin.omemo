@@ -1,7 +1,7 @@
 id: org.gajim.Gajim.Plugin.omemo
 runtime: org.gajim.Gajim
 runtime-version: stable
-sdk: org.gnome.Sdk//41
+sdk: org.gnome.Sdk//42
 build-extension: true
 separate-locales: false
 appstream-compose: false
@@ -11,16 +11,14 @@ build-options:
     PIP_TARGET: /app/plugins/omemo/site-packages
 
 modules:
-  - modules/python3-pillow.yaml
-
   - name: protobuf
     buildsystem: simple
     build-commands:
-      - pip3 install --no-deps protobuf-3.18.0-py2.py3-none-any.whl
+      - pip3 install --no-deps protobuf-3.20.1-py2.py3-none-any.whl
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/py2.py3/p/protobuf/protobuf-3.18.0-py2.py3-none-any.whl
-        sha256: 615099e52e9fbc9fde00177267a94ca820ecf4e80093e390753568b7d8cb3c1a
+        url: https://files.pythonhosted.org/packages/py2.py3/p/protobuf/protobuf-3.20.1-py2.py3-none-any.whl
+        sha256: adfc6cf69c7f8c50fd24c793964eef18f0ac321315439d94945820612849c388
 
   - name: python3-axolotl-curve25519
     buildsystem: simple
@@ -46,8 +44,8 @@ modules:
       - pip3 install .
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/source/q/qrcode/qrcode-7.3.tar.gz
-        sha256: d72861b65e26b611609f0547f0febe58aed8ae229d6bf4e675834f40742915b3
+        url: https://files.pythonhosted.org/packages/source/q/qrcode/qrcode-7.3.1.tar.gz
+        sha256: 375a6ff240ca9bd41adc070428b5dfc1dcfbb0f2507f1ac848f6cded38956578
 
   - name: gajim-omemo
     buildsystem: simple
@@ -58,5 +56,6 @@ modules:
       - appstream-compose --basename=org.gajim.Gajim.Plugin.omemo --prefix=${FLATPAK_DEST} --origin=flatpak org.gajim.Gajim.Plugin.omemo
     sources:
       - type: archive
-        url: https://ftp.gajim.org/plugins_releases/omemo_2.7.15.zip
-        sha256: 7e8435125a4b566402e2531f4e73ab60647b2f88fb65d8da2955dfb1e3befede
+        strip-components: 0
+        url: https://ftp.gajim.org/plugins/master/omemo/omemo_2.8.14.zip
+        sha256: a16187122b09f37a8811a847235d197f12bc9d771811cc63d70a4f30befa89c2
