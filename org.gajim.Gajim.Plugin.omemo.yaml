@@ -1,7 +1,7 @@
 id: org.gajim.Gajim.Plugin.omemo
 runtime: org.gajim.Gajim
 runtime-version: stable
-sdk: org.gnome.Sdk//42
+sdk: org.gnome.Sdk//43
 build-extension: true
 separate-locales: false
 appstream-compose: false
@@ -9,6 +9,7 @@ appstream-compose: false
 build-options:
   env:
     PIP_TARGET: /app/plugins/omemo/site-packages
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
 
 modules:
   - name: protobuf
